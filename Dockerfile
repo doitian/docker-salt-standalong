@@ -1,6 +1,6 @@
-FROM buildpack-deps:jessie-curl
+FROM ubuntu-upstart:trusty
 
-RUN curl -L -o - https://repo.saltstack.com/apt/debian/8/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add - \
+RUN wget -O - https://repo.saltstack.com/apt/ubuntu/14.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add - \
  && apt-get update -y \
  && apt-get install -y salt-minion \
  && rm -rf /var/lib/apt/lists/*
