@@ -10,4 +10,3 @@ COPY vendor/bats/bin /usr/local/bin/
 COPY vendor/bats/libexec /usr/local/libexec/
 
 WORKDIR /srv
-CMD [ "bats", "/srv/test" ]
