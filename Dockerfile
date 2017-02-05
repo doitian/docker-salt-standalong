@@ -1,6 +1,7 @@
 FROM buildpack-deps:jessie-curl
 
 RUN curl -L -o - https://repo.saltstack.com/apt/debian/8/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add - \
+ && echo 'deb http://repo.saltstack.com/apt/debian/8/amd64/latest jessie main' > /etc/apt/sources.list.d/saltstack.list \
  && apt-get update -y \
  && apt-get install -y salt-minion \
  && rm -rf /var/lib/apt/lists/*
