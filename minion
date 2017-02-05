@@ -1,0 +1,13 @@
+id: local
+file_client: local
+minion_id_caching: False
+
+file_roots:
+  base:
+    - /srv/states
+    - /srv/test/states
+
+pillar_roots:
+  base:
+    - /srv/test/pillar
+    - /srv/pillar
